@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Angular</title>
+</head>
+<body>
+    
+    <form (submit)="ingresoLogin()" class="formulario" method="post">
+        <h1>Inicio de sesion</h1><br>
+        <div class="form-group">
+            <label for="usuario">Usuario</label>  
+            <input type="text" id="usuario" name="usuario">     
+        </div><br>
+
+        <div class="form-group"> 
+            <label for="clave">Clave</label>
+            <input type="password" id="clave" name="clave">
+        </div><br>
+
+            <button type="submit" id="ingresar">Ingresar</button>
+    </form>
+</body>
+</html>
