@@ -10,44 +10,53 @@ import { Router } from '@angular/router';
 
 
 export class LoginComponent {
+  mensaje: string = ""
 
   constructor(public router: Router) {
   }
 
-  ingresoLogin(){
-    
+  ingresoLogin(e: Event) {
+    e.preventDefault();
     const username: string = (document.getElementById('usuario') as HTMLInputElement).value;
     const password: string = (document.getElementById('clave') as HTMLInputElement).value;
 
     //constantes con local storage.getitem
-   const almacen = localStorage.getItem('data');
+    const almacen = localStorage.getItem('data');
     console.log(almacen)
 
-
-    if (almacen) {
+    if (username == "") {
+      this.mensaje = "campo nombre vacio"
+    } else if (password == "") {
+      this.mensaje = "campo password vacio"
+    }else if (almacen) {
       const datosU = JSON.parse(almacen);
 
       const userExists = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username && user.pass === password);
 
       if (!userExists) {
-        alert('Los valores ingresados no existen, tienes que registrarte');
-        this.register()
+        this.mensaje = "Los valores ingresados no existen, tienes que registrarte"
+      }else if (username !== userExists && password !== userExists) {
+        this.mensaje = "los datos que ingresaste son incorrectos"
+      }else if(username !== userExists){
+        this.mensaje = "usuario incorrecto"
+      }else if(password !== userExists){
+        this.mensaje = "contraseña incorrecta"
       }else {
         alert('Bienvenido');
         this.dashboard()
       }
-
     }
   }
+
 
   register() {
     console.log("registro")
     this.router.navigateByUrl('/register');
   }
 
-  dashboard(){
+  dashboard() {
     console.log("dashboard")
     this.router.navigateByUrl('/dashboard');
   }
-  
+
 }

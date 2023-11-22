@@ -6,20 +6,25 @@
     <title>Login Angular</title>
 </head>
 <body>
-    
-    <form (submit)="ingresoLogin()" class="formulario" method="post">
+
+    <form class="formulario" method="post">
         <h1>Inicio de sesion</h1><br>
         <div class="form-group">
-            <label for="usuario">Usuario</label>  
-            <input type="text" id="usuario" name="usuario">     
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario">
         </div><br>
 
-        <div class="form-group"> 
+        <div class="form-group">
             <label for="clave">Clave</label>
             <input type="password" id="clave" name="clave">
         </div><br>
 
-            <button type="submit" id="ingresar">Ingresar</button>
+            <button type="submit" class="ingreso" id="ingresar" (click)="ingresoLogin($event)">Ingresar</button>
+            <button type="submit" class="registro"  id="registrar" (click)="register()">Registrarse</button>
     </form>
+
+    <div>
+      {{mensaje}}
+    </div>
 </body>
 </html>
