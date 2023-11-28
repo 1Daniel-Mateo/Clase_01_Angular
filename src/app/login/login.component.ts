@@ -24,20 +24,13 @@ export class LoginComponent {
     const almacen = localStorage.getItem('data');
     console.log(almacen)
 
+    if (username === "" || password === "") {
+      this.mensaje = "Campo nombre o contraseña vacío";
+      return;
+    }
+
     if (almacen) {
       const datosU = JSON.parse(almacen);
-
-      const userExiste = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username && user.pass === password);
-      
-        if (password == "" || username == "") {
-        this.mensaje = "campo nombre o contraseña vacio"
-        }
-        
-        if (!userExiste) {
-          this.mensaje = "Los valores ingresados no existen, tienes que registrarte"
-          console.log(userExiste)
-        }
-        
         //Constantes para comparar usuario y contraseña
         const UserCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username);
         const PassCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.pass === password);
@@ -46,9 +39,9 @@ export class LoginComponent {
             this.dashboard()
             alert('Bienvenido');  
         }else {
-          if (!UserCorrect) {
-            this.mensaje = "Usuario incorrecto";
-          } else {
+          if(!UserCorrect){
+            this.mensaje = "Este usuario, no existe tienes que registrarlo"; 
+          }else{
             this.mensaje = "Contraseña incorrecta";
           }
         }
