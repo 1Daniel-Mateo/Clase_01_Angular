@@ -37,7 +37,7 @@ export class LoginComponent {
 
         if (UserCorrect && PassCorrect){
             this.dashboard()
-            alert('Bienvenido');  
+            this.mensaje = `Bienvenido` 
         }else {
           if(!UserCorrect){
             this.mensaje = "Este usuario, no existe tienes que registrarlo"; 

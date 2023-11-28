@@ -79,3 +79,19 @@ input:focus {
 .registro:hover {
   background-color: #ff003c;
 }
+
+
+.mensaje{
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  background-color: #ff003c;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  opacity: 0;
+  transition: 0.5s;
+}
