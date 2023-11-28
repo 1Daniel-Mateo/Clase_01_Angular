@@ -24,27 +24,34 @@ export class LoginComponent {
     const almacen = localStorage.getItem('data');
     console.log(almacen)
 
-    if (username == "") {
-      this.mensaje = "campo nombre vacio"
-    } else if (password == "") {
-      this.mensaje = "campo password vacio"
-    }else if (almacen) {
+    if (almacen) {
       const datosU = JSON.parse(almacen);
 
-      const userExists = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username && user.pass === password);
+      const userExiste = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username && user.pass === password);
+      
+        if (password == "" || username == "") {
+        this.mensaje = "campo nombre o contraseña vacio"
+        }
+        
+        if (!userExiste) {
+          this.mensaje = "Los valores ingresados no existen, tienes que registrarte"
+          console.log(userExiste)
+        }
+        
+        //Constantes para comparar usuario y contraseña
+        const UserCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username);
+        const PassCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.pass === password);
 
-      if (!userExists) {
-        this.mensaje = "Los valores ingresados no existen, tienes que registrarte"
-      }else if (username !== userExists && password !== userExists) {
-        this.mensaje = "los datos que ingresaste son incorrectos"
-      }else if(username !== userExists){
-        this.mensaje = "usuario incorrecto"
-      }else if(password !== userExists){
-        this.mensaje = "contraseña incorrecta"
-      }else {
-        alert('Bienvenido');
-        this.dashboard()
-      }
+        if (UserCorrect && PassCorrect){
+            this.dashboard()
+            alert('Bienvenido');  
+        }else {
+          if (!UserCorrect) {
+            this.mensaje = "Usuario incorrecto";
+          } else {
+            this.mensaje = "Contraseña incorrecta";
+          }
+        }
     }
   }
 
