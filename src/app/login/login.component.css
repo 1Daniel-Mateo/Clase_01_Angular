@@ -5,14 +5,19 @@ body {
   height: 100vh;
   margin: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #009FFF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
 }
 
 .formulario {
   width: 300px;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #737373;
+  border-radius: 20px;
   position: relative;
+  background-color: #ffffff;
 }
 
 .form-group {
@@ -34,7 +39,7 @@ input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 100%;
+  width: 95%;
   border: none;
   border-bottom: 1px solid #ccc;
   transition: border-color 0.3s ease;
