@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +11,24 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
   mensaje: string = ""
+  mostrarMensaje: boolean = false;
 
   constructor(public router: Router) {
+  }
+
+  mostrar(mensaje: string){
+    this.mensaje= mensaje;
+    this.mostrarMensaje=true;
+
+    // este metodo nos muestra el mensaje por tres segundos
+    setTimeout(() => {
+      this.mensaje = "";
+  }, 3000);
+  }
+
+  ocultar(){
+    this.mostrarMensaje=false;
+    this.mensaje ="";
   }
 
   ingresoLogin(e: Event) {
@@ -25,7 +41,7 @@ export class LoginComponent {
     console.log(almacen)
 
     if (username === "" || password === "") {
-      this.mensaje = "Campo nombre o contraseña vacío";
+      this.mostrar('Campo nombre o contraseña vacío');
       return;
     }
 
@@ -40,12 +56,13 @@ export class LoginComponent {
             this.mensaje = `Bienvenido` 
         }else {
           if(!UserCorrect){
-            this.mensaje = "Este usuario, no existe tienes que registrarlo"; 
+            this.mostrar('Este usuario, no existe tienes que registrarlo');
           }else{
-            this.mensaje = "Contraseña incorrecta";
+            this.mostrar('Contraseña incorrecta');
           }
         }
     }
+    
   }
 
 

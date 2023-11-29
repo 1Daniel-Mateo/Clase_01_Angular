@@ -10,8 +10,24 @@ import { Component } from '@angular/core';
 
 export class RegisterComponent {
   mensaje: string = ""
+  mostrarMensaje: boolean = false;
 
   constructor(public router: Router){
+  }
+
+  mostrar(mensaje: string){
+    this.mensaje= mensaje;
+    this.mostrarMensaje=true;
+
+    // este metodo nos muestra el mensaje por tres segundos
+    setTimeout(() => {
+      this.mensaje = "";
+  }, 3000);
+  }
+
+  ocultar(){
+    this.mostrarMensaje=false;
+    this.mensaje ="";
   }
 
   datos(): { usuario: { user: string, email: string, pass: string }[] } {
@@ -28,7 +44,7 @@ registrar(event: Event): void {
   const contraseña: string = (document.getElementById('contraseña') as HTMLInputElement).value;
 
   if (nombre === "" || correo === "" || contraseña === "") {
-    this.mensaje = "Campos vacíos";
+    this.mostrar('Campos vacíos');
     return;
   }
 
@@ -39,9 +55,9 @@ registrar(event: Event): void {
 
 
   if (usuarioExistente) {
-    this.mensaje = `El correo ya existe `
+    this.mostrar('El correo ya existe');
   }else if(contraseñaExistente){
-    this.mensaje = `La contraseña ya existe `
+    this.mostrar('La contraseña ya existe');
   }else {
     const nuevoUsuario = { user: nombre, email: correo, pass: contraseña };
     datosActuales.usuario.push(nuevoUsuario);

@@ -80,18 +80,22 @@ input:focus {
   background-color: #ff003c;
 }
 
-
+/* en este le damos estilos al mensaje*/
 .mensaje{
   position: fixed;
-  top: 80%;
+  top: 90%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 15px;
-  background-color: #ff003c;
+  padding: 15px 0;
+  background-color: #ff003ce9;
   color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 999;
   opacity: 0;
   transition: 0.5s;
+}
+/*este nos sirve para mostrar el mensaje*/
+.mensaje.mostrar {
+  opacity: 1;
 }
