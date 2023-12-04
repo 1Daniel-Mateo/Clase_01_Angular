@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-lista',
+  templateUrl: './lista.component.html',
+  styleUrls: ['./lista.component.css']
 })
-export class DashboardComponent {
+export class ListaComponent {
+
   username: string | null = null;
 
    constructor(public router: Router) {
@@ -17,10 +18,10 @@ export class DashboardComponent {
       const user = JSON.parse(userData);
       this.username = user.username;
     }
-   }
+  }
 
-   lista(){
-    this.router.navigateByUrl('/lista');
-   }
-  
+  dashboard() {
+    console.log("dashboard")
+    this.router.navigateByUrl('/dashboard');
+  }
 }

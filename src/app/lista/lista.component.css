@@ -110,94 +110,28 @@ body{
     margin: 0 50px;
   }
   .contenido > h3{
+    text-align: center;
+  }
+
+
+ table{
     text-align: left;
+    border-collapse: collapse;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #333;
   }
 
-
-  .contenido {
-    margin: 20px;
-  }
-  
-  .aplicar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    margin: 20px 0; /* Agrega margen superior e inferior */
-  }
-  
-  .aplicar img {
-    width: 45%; /* Reducción del ancho de la imagen */
-  }
-  
-  .mini-contenedor {
-    width: 45%; /* Reducción del ancho del mini-contenedor */
-    box-sizing: border-box;
-    padding: 10px;
-  }
-  
-  .mini-contenedor h3, .mini-contenedor p {
-    margin: 0;
-  }
-  
-  .mini-contenedor .lista {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .mini-contenedor .campo {
-    padding: 5px 0;
-    margin-left: 0;
-  }
-  
-  .empresas{
-    margin: 10px;
-  }
-
-  .empresas h3,p{
-    text-align: left;
-  }
-
-  .empresas .imagenes {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-  }
-
-
-  .empresas .imgs {
-    flex: 0 0 calc(16.666% - 10px); 
-    margin: 5px; 
-  }
-  
-  .empresas img {
+  thead{
+    background-color: green;
+    color: white;
+    margin: 5px;
     width: 100%;
-    height: 200px;
-    border: 1px solid black;
-    border-radius: 10px;
   }
-  
-  .empresas .titulo2 {
-    margin-bottom: 10px; 
-  }
-  
-  .empresas .explicar {
-    margin-bottom: 20px;
-  }
-  
-  
-  footer {
+
+
+footer {
     background-color: #333; 
     color: white; 
     text-align: center; 
     padding: 10px; 
   }
-  
-
-
-
-
-

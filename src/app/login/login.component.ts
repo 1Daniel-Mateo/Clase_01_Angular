@@ -16,19 +16,19 @@ export class LoginComponent {
   constructor(public router: Router) {
   }
 
-  mostrar(mensaje: string){
-    this.mensaje= mensaje;
-    this.mostrarMensaje=true;
+  mostrar(mensaje: string) {
+    this.mensaje = mensaje;
+    this.mostrarMensaje = true;
 
     // este metodo nos muestra el mensaje por tres segundos
     setTimeout(() => {
       this.mensaje = "";
-  }, 3000);
+    }, 3000);
   }
 
-  ocultar(){
-    this.mostrarMensaje=false;
-    this.mensaje ="";
+  ocultar() {
+    this.mostrarMensaje = false;
+    this.mensaje = "";
   }
 
   ingresoLogin(e: Event) {
@@ -47,22 +47,28 @@ export class LoginComponent {
 
     if (almacen) {
       const datosU = JSON.parse(almacen);
-        //Constantes para comparar usuario y contraseña
-        const UserCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username);
-        const PassCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.pass === password);
+      //Constantes para comparar usuario y contraseña
+      const UserCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.user === username);
+      const PassCorrect = datosU.usuario.some((user: { user: string; pass: string; }) => user.pass === password);
 
-        if (UserCorrect && PassCorrect){
-            this.dashboard()
-            this.mensaje = `Bienvenido` 
-        }else {
-          if(!UserCorrect){
-            this.mostrar('Este usuario, no existe tienes que registrarlo');
-          }else{
-            this.mostrar('Contraseña incorrecta');
-          }
+      if (UserCorrect && PassCorrect) {
+
+        const nombre = {
+          username: username,
         }
+        localStorage.setItem('nombre', JSON.stringify(nombre));
+
+        this.dashboard()
+        this.mensaje = `Bienvenido`
+      } else {
+        if (!UserCorrect) {
+          this.mostrar('Este usuario, no existe tienes que registrarlo');
+        } else {
+          this.mostrar('Contraseña incorrecta');
+        }
+      }
     }
-    
+
   }
 
 

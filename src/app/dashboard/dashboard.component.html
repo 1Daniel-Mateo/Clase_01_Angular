@@ -6,27 +6,30 @@
     <title>Dashboard</title>
   </head>
   <body>
-    
-
-    
-   
-
     <div class="contenedor">
 
      
       <nav class="menu">
         <img src="assets/img/logo.jpg" class="logo">
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Opciones de empleo</a></li>
+          <li><a routerLink="/dashboard">Inicio</a></li>
+          <li><a routerLink="/lista" (click)="lista()">Opciones de empleo</a></li>
           <li><a href="#">Contactenos</a></li>
           <li><a href="#">Quienes somos</a></li>
-          <li><a href="#">Perfil</a></li>
-          <li><a href="#">Cerrar sesion</a></li>
+          <li class="SubMenu">
+            <a href="#">Perfil</a>
+          <ul class="perfil"><br>
+            <img src="assets/img/aegon.jpg" alt="">
+            <li><p>{{ username }}</p></li>
+            <li><a href="#">Cuenta</a></li><br>
+            <li><a href="#">Cerrar sesion</a></li>
+          </ul>
+        </li>
         </ul>
       </nav>
 
     <div class="trabajo">
+
       <div class="empleados">
         <img src="assets/img/trabajador.jpg" class="img1">
         <div class="buscar">
@@ -45,14 +48,18 @@
       </p>
 
         <div class="aplicar">
-          <img src="assets/img/comprender.png">
+          <img src="assets/img/comprender.png"><br>
+          <div class="mini-contenedor">
           <H3>Cosas a tener en cuenta</H3><br>
-          <p>usted como empleado cuando seleccione alguna oferta tiene que tener en cuenta los siguente puntos</p><br>
-          <span>1. Observar el instructivo de la empresa para aplicar</span><br>
-          <span>2. Que trabajo va realizar en la empresa</span><br>
-          <span>3. La ubicacion de la empresa</span><br>
-          <span>4. El minimo de estudios requerido</span><br>
-          <span>5. El salario que ofrece la empresa por el trabajo</span><br>
+          <p>usted como empleado cuando seleccione alguna oferta tiene que tener en cuenta los siguente puntos</p>
+          <ul class="lista">
+            <li class="campo">1.Observar el instructivo de la empresa para aplicar</li>
+            <li class="campo">2.Que trabajo va realizar en la empresa</li>
+            <li class="campo">3.El mínimo de estudios requerido</li>
+            <li class="campo">4.La ubicación de la empresa</li>
+            <li class="campo">5.El salario que ofrece la empresa por el trabajo</li>
+          </ul>
+        </div>
         </div>
 
       <div class="empresas">
@@ -60,18 +67,18 @@
         <p>Este apartado puede buscar si en alguna de estas empresas hay puestos disponibles</p>
 
         <div class="imagenes">
-          <li class="imgs"><img src="assets/img/amazon.png"></li>
-          <li class="imgs"><img src="assets/img/apple.png"></li>
-          <li class="imgs"><img src="assets/img/autos.jpg"></li>
-          <li class="imgs"><img src="assets/img/bancolombia.png"></li>
-          <li class="imgs"><img src="assets/img/buñelos.png"></li>
-          <li class="imgs"><img src="assets/img/compensar.png"></li>
-          <li class="imgs"><img src="assets/img/falabella.png"></li>
-          <li class="imgs"><img src="assets/img/lider.png"></li>
-          <li class="imgs"><img src="assets/img/seguridad.png"></li>
-          <li class="imgs"><img src="assets/img/teleperformance.png"></li>
-          <li class="imgs"><img src="assets/img/veterinaria.png"></li>
-          <li class="imgs"><img src="assets/img/registraduria.jpg"></li>
+          <li class="imgs"><a href="#"><img src="assets/img/autos.jpg"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/apple.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/amazon.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/bancolombia.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/buñelos.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/compensar.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/falabella.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/lider.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/seguridad.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/teleperformance.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/veterinaria.png"></a></li>
+          <li class="imgs"><a href="#"><img src="assets/img/registraduria.jpg"></a></li>
         </div>
       </div>
   
@@ -79,9 +86,10 @@
 
         
         </div>
+
     </div>
     
-  </div>
+  </div><br>
 
   <footer>
     Autor: Daniel mateo suarez-copyrigt de imagenes de google

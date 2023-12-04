@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicar para empleos</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <nav class="menu">
+        <img src="assets/img/logo.jpg" class="logo" />
+        <ul>
+          <li><a routerLink="/dashboard" (click)="dashboard()">Inicio</a></li>
+          <li><a routerLink="/lista">Opciones de empleo</a></li>
+          <li><a href="#">Contactenos</a></li>
+          <li><a href="#">Quienes somos</a></li>
+          <li class="SubMenu">
+            <a href="#">Perfil</a>
+            <ul class="perfil">
+              <br />
+              <img src="assets/img/aegon.jpg" alt="" />
+              <li>
+                <p>{{ username }}</p>
+              </li>
+              <li><a href="#">Cuenta</a></li>
+              <br />
+              <li><a href="#">Cerrar sesion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="trabajo">
+        <div class="empleados">
+          <img src="assets/img/trabajador.jpg" class="img1" />
+          <div class="buscar">
+            <input type="text" class="buscador" placeholder="Buscar empleo" />
+            <button type="button" class="busqueda">BUSCAR</button>
+          </div>
+        </div>
+
+        <div class="contenido">
+          <h3>APLICA PARA ALGUNO DE LOS TRABAJOS</h3>
+
+          <table>
+              <thead>
+                <tr>
+                  <th>Código Empleo</th>
+                  <th>Nombre de Empleo</th>
+                  <th>Fecha de Cierre</th>
+                  <th>Descripción</th>
+                  <th>Nivel de Estudios</th>
+                  <th>Experiencia</th>
+                  <th>Postular</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td>631212514514</td>
+                <td>Meta car</td>
+                <td>15-12-2023</td>
+                <td>Arreglo de motores de autos, motos y camiones</td>
+                <td>Tecnologo o especialista en ingenieria mecanica</td>
+                <td>0</td>
+                <td><button>APLICAR</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <footer>Autor: Daniel mateo suarez-copyrigt de imagenes de google</footer>
+  </body>
+</html>
