@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListaComponent } from './lista/lista.component';
+import { ModalComponent } from './modal/modal.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ListaComponent } from './lista/lista.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    ListaComponent
+    ListaComponent,
+    ModalComponent,
+    CuentaComponent
   ],
   imports: [
     BrowserModule,

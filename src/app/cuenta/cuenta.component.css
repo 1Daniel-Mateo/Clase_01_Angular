@@ -11,7 +11,7 @@ body{
   }
   
   .menu .logo {
-    margin-right: auto; 
+    margin-right: auto; /* Mueve el logo a la izquierda del menú */
   }
   
   .menu ul {
@@ -20,7 +20,7 @@ body{
   }
   
   .menu li {
-    margin-right: 10px;
+    margin-right: 20px;
   }
   
   .menu a {
@@ -33,12 +33,12 @@ body{
     text-decoration: underline;
   }
 
-  .usuario{
-    margin: 10px;
-      width: 80px;
-      height: 80px;
-      border-radius: 50px;
-    }
+ .usuario{
+  margin: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+  }
 
   .perfil{
     opacity: 0;
@@ -117,86 +117,63 @@ body{
     margin: 0 50px;
   }
   .contenido > h3{
-    text-align: center;
+    text-align: left;
   }
 
-  .boton{
-    margin: 5px;
-    width: 100px;
-    height: 53px; /* Alineado con la altura del buscador */
-    border-radius: 10px;
-    background-color: rgb(38, 93, 222);
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
 
-  .boton:hover{
-    font-size: 15px;
-    background-color: rgb(0, 166, 255);
-  }
-
-  .register{  
-    position: absolute;
-    opacity: 0;
-    max-width: 500px;
-    background-color: #fff;
-  }
-  .register.visible2{
-    opacity: 1;
+  .contenido {
+    margin: 20px;
   }
   
-
-
- table{
+  .aplicar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-align: left;
-    border-collapse: collapse;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid #333;
+    margin: 20px 0;
+    background-color: rgb(161, 161, 161);
+    border-radius: 0 10px 10px 0;
+  }
+  
+  .aplicar img {
+    width: 45%; 
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+  }
+  
+  .mini-contenedor {
+    width: 45%; 
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .mini-contenedor h3{
+    font-size: 40px;
+    margin: 0;
+  }
+  .mini-contenedor p{
+    font-size: 30px;
+
   }
 
-  thead{
-    background-color: green;
-    color: white;
-    margin: 5px;
-    width: 100%;
+  .mini-contenedor li{
+    font-size: 20px;
+
   }
-
-
-
-  .modal{  
-    position: relative;
-    opacity: 0;
-    max-width: 500px;
+  
+  .mini-contenedor .lista {
+    list-style: none;
+    padding: 0;
   }
-  .modal > .boton1{
-    margin: 5px;
-    width: 80px;
-    height: 53px; /* Alineado con la altura del buscador */
-    border-radius: 10px;
-    background-color: rgb(222, 38, 38);
-    color: white;
-    border: none;
-    cursor: pointer;
+  
+  .mini-contenedor .campo {
+    padding: 5px 0;
+    margin-left: 0;
   }
-
-  .modal > .boton2{
-    margin: 5px;
-    width: 80px;
-    height: 53px; /* Alineado con la altura del buscador */
-    border-radius: 10px;
-    background-color: rgb(38, 207, 222);
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  .modal.visible{
-    opacity: 1;
-  }
-
-
-footer {
+ 
+  
+  
+  footer {
     background-color: #333; 
     color: white; 
     text-align: center; 

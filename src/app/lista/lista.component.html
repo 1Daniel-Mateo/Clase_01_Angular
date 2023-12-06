@@ -12,19 +12,19 @@
         <ul>
           <li><a routerLink="/dashboard" (click)="dashboard()">Inicio</a></li>
           <li><a routerLink="/lista">Opciones de empleo</a></li>
-          <li><a href="#">Contactenos</a></li>
-          <li><a href="#">Quienes somos</a></li>
+          <li><a href="/contacto">Contactenos</a></li>
+          <li><a href="/quienes">Quienes somos</a></li>
           <li class="SubMenu">
-            <a href="#">Perfil</a>
+            <img src="assets/img/user.png" class="usuario">
             <ul class="perfil">
               <br />
               <img src="assets/img/aegon.jpg" alt="" />
               <li>
                 <p>{{ username }}</p>
               </li>
-              <li><a href="#">Cuenta</a></li>
+              <li><a href="/cuenta" (click)="cuenta()">Cuenta</a></li><br>
               <br />
-              <li><a href="#">Cerrar sesion</a></li>
+              <li><a href="/login" (click)="login()">Cerrar sesion</a></li>
             </ul>
           </li>
         </ul>
@@ -42,6 +42,41 @@
         <div class="contenido">
           <h3>APLICA PARA ALGUNO DE LOS TRABAJOS</h3>
 
+          <button class="boton" (click)="abrirModal1()">Agregar empleo</button>
+
+          <div class="register" [class.visible2]="mostrarModalR">
+            <div>
+              <button (click)="cerrarModal1()">X</button>
+            </div>
+            <!-- </div> <form action="" (submit)="registrar($event)"> -->
+              <form action="">
+              <label for="codigo">Codigo de empleo</label>
+              <input type="text" id="codigo"><br>
+            
+              <label for="nombre">Nombre de Empleo</label>
+              <input type="text" id="nombre"><br>
+            
+              <label for="fecha">Fecha de Cierre</label>
+              <input type="date" id="fecha"><br>
+            
+              <label for="descripcion">Descripción</label>
+              <input type="text" id="descripcion"><br>
+            
+              <label for="telefono">Telefono</label>
+              <input type="text" id="telefono"><br>
+            
+              <label for="estudio">Nivel de estudios</label>
+              <input type="text" id="estudio"><br>
+            
+              <label for="experiencia">Experiencia</label>
+              <input type="text" id="experiencia"><br>
+            
+              <button type="submit">Registrar Oferta</button>
+            </form>
+           
+            
+          </div>
+
           <table>
               <thead>
                 <tr>
@@ -49,6 +84,7 @@
                   <th>Nombre de Empleo</th>
                   <th>Fecha de Cierre</th>
                   <th>Descripción</th>
+                  <th>telefono</th>
                   <th>Nivel de Estudios</th>
                   <th>Experiencia</th>
                   <th>Postular</th>
@@ -56,16 +92,62 @@
               </thead>
             <tbody>
               <tr>
-                <td>631212514514</td>
-                <td>Meta car</td>
-                <td>15-12-2023</td>
-                <td>Arreglo de motores de autos, motos y camiones</td>
-                <td>Tecnologo o especialista en ingenieria mecanica</td>
-                <td>0</td>
-                <td><button>APLICAR</button></td>
+                <td>5641541561</td>
+                <td>falabella</td>
+                <td>22-12-2023</td>
+                <td>trabajo de ventas</td>
+                <td>32254545</td>
+                <td>bachiller</td>
+                <td>ninguna</td>
+                <td><button id="aplicar" (click)="abrirModal()">APLICAR</button></td>
               </tr>
+              <tr>
+                <td>54123321431</td>
+                <td>cars movil</td>
+                <td>22-12-2023</td>
+                <td>trabajo de mecanico</td>
+                <td>62154154</td>
+                <td>Tecnico</td>
+                <td>2 años de experiencia</td>
+                <td><button id="aplicar" (click)="abrirModal()">APLICAR</button></td>
+              </tr>
+              <tr>
+                <td>9641848784</td>
+                <td>sopas cruger</td>
+                <td>22-12-2023</td>
+                <td>cocinero</td>
+                <td>41187485</td>
+                <td>experto</td>
+                <td>2 años de experiencia</td>
+                <td><button id="aplicar" (click)="abrirModal()">APLICAR</button></td>
+              </tr>
+              <tr *ngFor="let trabajo of trabajos">
+                <td>{{ trabajo.codigo }}</td>
+                <td>{{ trabajo.nombre }}</td>
+                <td>{{ trabajo.fecha | date }}</td> <!-- Utilizar el filtro date para mostrar la fecha en un formato legible -->
+                <td>{{ trabajo.descripcion }}</td>
+                <td>{{ trabajo.telefono }}</td>
+                <td>{{ trabajo.estudio }}</td>
+                <td>{{ trabajo.experiencia }}</td>
+                <td><button id="aplicar" (click)="abrirModal()">APLICAR</button></td>
+              </tr>
+              
             </tbody>
           </table>
+
+<div class="modal" [class.visible]="mostrarModal">
+  <p>1. Esta es una venta pública, por lo que debes recordar que solo puedes postular a una opción.</p>
+  <p>2. Si se arrepiente de haber solicitado esta oferta, deberá llamar a la empresa o al gerente para eliminarlo de la aplicación.</p>
+  <p>3.Este sitio web garantiza la seguridad y privacidad de los datos de acuerdo con las leyes de protección de la información y las TIC.</p>
+
+  <input type="checkbox" id="aplico">Aceptar los términos y condicione
+  <br>
+  <button class="boton1" (click)="cerrarCancelarModal()">Cancelar</button>
+  <button class="boton2" (click)="aplico()" >Aplicar</button> 
+</div>
+
+
+
         </div>
       </div>
     </div>

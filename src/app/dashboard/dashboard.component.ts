@@ -22,5 +22,13 @@ export class DashboardComponent {
    lista(){
     this.router.navigateByUrl('/lista');
    }
+
+   login(){
+     this.router.navigateByUrl('/login');
+   }
+
+   cuenta(){
+    this.router.navigateByUrl('/cuenta');
+   }
   
 }

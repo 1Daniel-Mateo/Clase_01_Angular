@@ -15,14 +15,14 @@
           <li><a routerLink="/dashboard">Inicio</a></li>
           <li><a routerLink="/lista" (click)="lista()">Opciones de empleo</a></li>
           <li><a href="#">Contactenos</a></li>
-          <li><a href="#">Quienes somos</a></li>
+          <li><a href="#">Quienes somos</a></li><br><br>
           <li class="SubMenu">
-            <a href="#">Perfil</a>
+            <img src="assets/img/user.png" class="usuario">
           <ul class="perfil"><br>
             <img src="assets/img/aegon.jpg" alt="">
             <li><p>{{ username }}</p></li>
-            <li><a href="#">Cuenta</a></li><br>
-            <li><a href="#">Cerrar sesion</a></li>
+            <li><a href="/cuenta" (click)="cuenta()">Cuenta</a></li><br>
+            <li><a href="/login" (click)="login()">Cerrar sesion</a></li>
           </ul>
         </li>
         </ul>

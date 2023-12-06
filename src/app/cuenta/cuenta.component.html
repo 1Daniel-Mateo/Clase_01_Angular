@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicar para empleos</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <nav class="menu">
+        <img src="assets/img/logo.jpg" class="logo" />
+        <ul>
+          <li><a routerLink="/dashboard" (click)="dashboard()">Inicio</a></li>
+          <li><a routerLink="/lista">Opciones de empleo</a></li>
+          <li><a href="/contacto">Contactenos</a></li>
+          <li><a href="/quienes">Quienes somos</a></li>
+          <li class="SubMenu">
+            <img src="assets/img/user.png" class="usuario">
+            <ul class="perfil">
+              <br />
+              <img src="assets/img/aegon.jpg" alt="" />
+              <li>
+                <p>{{ username }}</p>
+              </li>
+              <li><a href="#">Cuenta</a></li>
+              <br />
+              <li><a href="/login" (click)="login()">Cerrar sesion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="trabajo">
+        <div class="empleados">
+          <img src="assets/img/trabajador.jpg" class="img1" />
+          <div class="buscar">
+            <input type="text" class="buscador" placeholder="Buscar empleo" />
+            <button type="button" class="busqueda">BUSCAR</button>
+          </div>
+        </div>
+
+        <div class="contenido">
+
+          <div class="aplicar">
+            <img src="assets/img/cuenta.png"><br>
+            <div class="mini-contenedor">
+            <H3>Tu cuenta</H3><br>
+            <p>Estos son los datos de tu cuenta</p>
+            <ul class="lista">
+              <li class="campo">1. Nombre: {{ username }}</li>
+              <li class="campo">2. Correo: {{ email }}</li>
+              <li class="campo">3. Contraseña: {{ pass }}</li>
+              
+            </ul>
+          </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <br/>
+
+    <footer>Autor: Daniel mateo suarez-copyrigt de imagenes de google</footer>
+  </body>
+</html>
